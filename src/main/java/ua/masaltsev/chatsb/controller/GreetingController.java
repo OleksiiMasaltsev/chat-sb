@@ -12,13 +12,19 @@ import ua.masaltsev.chatsb.model.Message;
 public class GreetingController {
   @MessageMapping("/hello")
   @SendTo("/topic/greetings")
-  public Greeting greeting(HelloMessage message) throws Exception {
+  public Greeting greeting(HelloMessage message) {
+    if (message.getName().isBlank()) {
+      message.setName("anonymous");
+    }
     return new Greeting(HtmlUtils.htmlEscape(message.getName()) + " is online now");
   }
 
   @MessageMapping("/send")
   @SendTo("/topic/greetings")
-  public Message send(Message message) throws Exception {
+  public Message send(Message message) {
+    if (message.getContent().isBlank()) {
+      throw new RuntimeException("There is no content in the message: " + message);
+    }
     if (message.getSender() == null) {
       message.setContent("anonymous: " + message.getContent());
     } else {

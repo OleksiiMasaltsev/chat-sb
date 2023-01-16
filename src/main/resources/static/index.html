@@ -18,20 +18,31 @@
     <div class="col-md-6">
       <form class="form-inline">
         <div class="form-group">
-          <label for="connect">WebSocket connection:</label>
+          <label for="connect">Chat connection:</label>
           <button id="connect" class="btn btn-default" type="submit">Connect</button>
           <button id="disconnect" class="btn btn-default" type="submit" disabled="disabled">Disconnect
           </button>
         </div>
       </form>
     </div>
+    <br>
     <div class="col-md-6">
       <form class="form-inline">
         <div class="form-group">
-          <label for="name">What is your name?</label>
+          <label for="name">Enter your name</label>
           <input type="text" id="name" class="form-control" placeholder="Your name here...">
         </div>
-        <button id="send" class="btn btn-default" type="submit">Send</button>
+        <button id="send_name" class="btn btn-default" type="submit">Send</button>
+      </form>
+    </div>
+    <br>
+    <div class="col-md-6">
+      <form class="form-inline">
+        <div class="form-group">
+          <label for="name">Enter your message</label>
+          <input type="text" id="message" class="form-control" placeholder="Your message here...">
+        </div>
+        <button id="send_message" class="btn btn-default" type="submit">Send</button>
       </form>
     </div>
   </div>

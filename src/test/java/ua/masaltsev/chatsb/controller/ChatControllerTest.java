@@ -7,12 +7,12 @@ import ua.masaltsev.chatsb.model.Message;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class GreetingControllerTest {
-    private GreetingController controller;
+class ChatControllerTest {
+    private ChatController controller;
 
     @BeforeEach
     void setUp() {
-        controller = new GreetingController();
+        controller = new ChatController();
     }
 
     @Test

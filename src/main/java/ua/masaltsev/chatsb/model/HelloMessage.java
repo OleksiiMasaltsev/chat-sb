@@ -6,5 +6,5 @@ import lombok.Setter;
 @Getter
 @Setter
 public class HelloMessage {
-  private String name;
+    private String name;
 }
